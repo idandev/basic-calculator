@@ -7,6 +7,7 @@ from parser import Parser
 
 def main():
     print('->', end=' ')
+    sys.stdout.flush()
     for line in sys.stdin:
         lexer = Lexer(line)
         tokens = lexer.lex()
@@ -20,6 +21,7 @@ def main():
         interpreter = Interpreter(ast)
         interpreter.run()
         print('->', end=' ')
+        sys.stdout.flush()
 
 
 if __name__ == '__main__':
